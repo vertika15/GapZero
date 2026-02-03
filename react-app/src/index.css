@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #050B14;
+    color: #ffffff;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.bg-neon {
+  background: radial-gradient(circle at 50% 0%, #1a1f35 0%, #050B14 100%);
+}
+
+.bg-neon-animated {
+  background: radial-gradient(1200px 600px at 50% -20%, #0b1226 0%, #050B14 40%) no-repeat,
+              linear-gradient(120deg, rgba(59,130,246,0.12), rgba(139,92,246,0.12)) no-repeat;
+  background-blend-mode: screen;
+  animation: neonPulse 8s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+  50% { filter: hue-rotate(20deg) brightness(1.1); }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.glass-hover:hover {
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 0 20px rgba(59,130,246,0.2), 0 0 40px rgba(139,92,246,0.15);
+  transition: all 300ms ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050B14; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Neon Text Utilities */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+}
